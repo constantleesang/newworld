@@ -77,7 +77,7 @@ body {
 }
 
 .hero {
-    background: url('https://i.imgur.com/example_hero.jpg') no-repeat center center/cover;
+    background: url('main_bakdu.gif') no-repeat center center/cover;
     height: 60vh;
     display: flex;
     align-items: center;
@@ -184,4 +184,5 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
 

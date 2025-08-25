@@ -41,6 +41,18 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
 }
+.main-header .logo a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-header .company-logo {
+    height: 40px; /* 로고 높이를 40px로 설정하여 밸런스 유지 */
+    width: auto; /* 높이에 맞춰 너비 자동 조절 */
+    margin-right: 10px; /* 로고와 텍스트 사이 간격 */
+}
 
 .main-nav ul {
     list-style: none;
@@ -172,3 +184,4 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+

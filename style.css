@@ -141,15 +141,14 @@ body {
     transform: translateY(-3px);
 }
 
-/* ------------------ */
 /* 새로운 애니메이션 코드 */
 /* ------------------ */
-@keyframes blink {
+@keyframes pulse {
     0% {
-        opacity: 1; /* 완전히 보임 */
+        transform: scale(1); /* 원래 크기 */
     }
     100% {
-        opacity: 0.7; /* 70% 투명해짐 */
+        transform: scale(1.05); /* 5% 커짐 */
     }
 }
 
@@ -223,6 +222,7 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
 
 
 

@@ -148,7 +148,7 @@ body {
         transform: scale(1); /* 원래 크기 */
     }
     100% {
-        transform: scale(1.05); /* 5% 커짐 */
+        transform: scale(1.03); /* 5% 커짐 */
     }
 }
 
@@ -222,6 +222,7 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
 
 
 

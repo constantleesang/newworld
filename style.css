@@ -133,7 +133,7 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     
     /* 버튼 크기 변화 효과 추가 */
-    animation: pulse 1s infinite alternate;
+    animation: pulse 0.5s infinite alternate;
 }
 
 .cta-button:hover {
@@ -222,6 +222,7 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
 
 
 

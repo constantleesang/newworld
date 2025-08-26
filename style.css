@@ -132,8 +132,8 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     
-    /* 버튼 깜빡임 효과 추가 */
-    animation: blink 2s infinite alternate;
+    /* 버튼 크기 변화 효과 추가 */
+    animation: pulse 2s infinite alternate;
 }
 
 .cta-button:hover {
@@ -222,6 +222,7 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
 
 
 

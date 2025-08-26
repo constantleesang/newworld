@@ -3,113 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>여행 상품 상세정보</title>
+    <title>백두산 신묘한 기도여행 상세정보</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .details-hero {
-            background: url('http://googleusercontent.com/image_generation_content/2') no-repeat center center/cover;
-            height: 40vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .product-hero {
             position: relative;
-            color: #fff;
-            text-align: center;
+            width: 100%;
+            height: 600px; /* 메인 이미지 높이 */
+            overflow: hidden;
         }
 
-        .details-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .product-hero img {
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 1;
+            object-fit: cover;
+            object-position: center;
         }
-
-        .details-hero-content {
+        
+        .main-content {
+            background-color: #fff;
             position: relative;
-            z-index: 2;
+            z-index: 10;
+            margin-top: -100px; /* 이미지를 덮도록 위로 당기기 */
+            padding-top: 50px;
         }
 
-        .details-hero h1 {
-            font-size: 3rem;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .details-section {
-            padding: 60px 0;
-        }
-
-        .details-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.2rem;
-            color: var(--primary-color);
-        }
-
-        .details-info {
+        .product-info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 20px;
         }
 
-        .details-item {
-            background-color: var(--light-bg-color);
+        .product-description, .product-summary {
+            background-color: #f9f7f4;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+        }
+
+        .product-summary {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-summary .price {
+            font-size: 2.5rem;
+            color: #A52A2A;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .product-summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .product-summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-summary-item strong {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .product-summary-item span {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .itinerary-section, .inclusions-section {
+            padding: 50px 0;
+        }
+        
+        .itinerary-list, .inclusions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .itinerary-day {
+            background-color: #f9f7f4;
             padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #6a4d33;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .itinerary-day h3 {
+            margin-top: 0;
+            font-size: 1.4rem;
+            color: #6a4d33;
         }
 
-        .details-item h3 {
-            color: var(--primary-color);
+        .inclusions-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .inclusion-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .inclusion-item h4 {
+            color: #6a4d33;
             margin-top: 0;
+            font-size: 1.2rem;
         }
 
         .details-footer-button {
             text-align: center;
-            margin-top: 40px;
-        }
-
-        /* 메인 페이지와의 일관성을 위해 일부 CSS 재사용 */
-        .cta-button {
-            display: inline-block;
-            padding: 20px 40px; 
-            background-color: #A52A2A; 
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            animation: pulse 1s infinite alternate;
-        }
-
-        .cta-button:hover {
-            background-color: #8B0000;
-            transform: translateY(-3px);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.03); }
+            padding-bottom: 80px;
         }
     </style>
 </head>
-    
 <body>
 
     <header class="main-header">
         <div class="container">
-           <h1 class="logo">
-            <a href="index.html">
-                <img src="logo_1-Photoroom.png" alt="회사 로고" class="company-logo">
-                신묘한 기도여행
-            </a>
-        </h1>
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="logo_1-Photoroom.png" alt="회사 로고" class="company-logo">
+                    신묘한 기도여행
+                </a>
+            </h1>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html#home">홈</a></li>
@@ -124,90 +150,91 @@
         </div>
     </header>
 
-    <section class="details-hero">
-        <div class="details-hero-content">
-            <h1>백두산 신묘한 기도여행 상세정보</h1>
-        </div>
-    </section>
+    <div class="product-hero">
+        <img src="http://googleusercontent.com/image_generation_content/2" alt="백두산 기도여행 메인 이미지">
+    </div>
 
-    <main>
-        <section class="details-section bg-light">
-            <div class="container">
-                <h2>여행 개요</h2>
-                <p>
-                    백두산 신묘한 기도여행은 단순한 여행을 넘어선 **영적 여정**입니다. 한국민속학 박사와 함께 백두산의 신비로운 기운을 느끼고, 한민족의 역사와 무속신앙의 발자취를 따라가는 특별한 기회를 제공합니다.
-                </p>
-                <div class="details-info">
-                    <div class="details-item">
-                        <h3>기간</h3>
-                        <p>4박 5일</p>
+    <main class="main-content">
+        <div class="container">
+            <div class="product-info-grid">
+                <div class="product-description">
+                    <h1>한국민속학 박사와 함께하는 신묘한 백두산 기도여행</h1>
+                    <p>
+                        이 여행은 단순한 관광을 넘어 **'세상의 빛남을 살피는' 영적 여정**입니다. 백두산의 신비로운 기운을 느끼고, 한민족의 역사와 무속신앙의 발자취를 따라가는 특별한 기회를 제공합니다. 저마다 몸주 신령들과 약화된 관계를 회복하고 새로운 신령과 조우하는 시간이 될 것입니다.
+                    </p>
+                    <p>
+                        **동행 전문가**: 한국민속학 연구 30년 전문가 **안상경 박사**. 문화재청 무형문화재분과 전문위원, 한·중교류문화원 원장 역임.
+                    </p>
+                </div>
+                
+                <div class="product-summary">
+                    <div class="price">가격 별도 문의</div>
+                    <div class="product-summary-item">
+                        <strong>여행 기간</strong>
+                        <span>4박 5일</span>
                     </div>
-                    <div class="details-item">
-                        <h3>주요 방문지</h3>
-                        <p>백두산, 국동대혈(통천굴), 압록강 수신제 터, 천년서낭 등</p>
+                    <div class="product-summary-item">
+                        <strong>여행 인원</strong>
+                        <span>최대 16명 (소수 정예)</span>
                     </div>
-                    <div class="details-item">
-                        <h3>동행 전문가</h3>
-                        <p>한국민속학 연구 30년 전문가 **안상경 박사**</p>
+                    <div class="product-summary-item">
+                        <strong>운영 방식</strong>
+                        <span>옵션, 쇼핑, 팁 없음</span>
                     </div>
+                    <a href="index.html#contact" class="cta-button">여행 문의하기</a>
                 </div>
             </div>
-        </section>
-
-        <section class="details-section">
-            <div class="container">
+            
+            <section class="itinerary-section">
                 <h2>세부 일정</h2>
-                <p>
-                    각 일차별 상세 일정은 다음과 같습니다.
-                </p>
-                <div class="details-info">
-                    <div class="details-item">
-                        <h3>1일차: 인천-심양-집안</h3>
+                <div class="itinerary-list">
+                    <div class="itinerary-day">
+                        <h3>1일차: 인천 - 심양 - 집안</h3>
                         <p>인천공항 집결 및 이동, **국동대혈(통천굴)**과 **압록강 수신제 터** 방문.</p>
                     </div>
-                    <div class="details-item">
-                        <h3>2일차: 집안-이도백하</h3>
-                        <p>**눌은고성(나인고성)** 방문, 저녁 식사 및 호텔 체크인</p>
+                    <div class="itinerary-day">
+                        <h3>2일차: 집안 - 이도백하</h3>
+                        <p>**눌은고성(나인고성)** 방문, 저녁 식사 및 호텔 체크인.</p>
                     </div>
-                    <div class="details-item">
-                        <h3>3일차: 이도백하-돈화</h3>
+                    <div class="itinerary-day">
+                        <h3>3일차: 이도백하 - 돈화</h3>
                         <p>**천년서낭**, **천하제일천** 방문 후 **백두산 기도**. 돈화로 이동.</p>
                     </div>
-                    <div class="details-item">
-                        <h3>4일차: 돈화-통화</h3>
-                        <p>**육정산 정각사** 방문 후 통화로 이동 및 호텔 체크인</p>
+                    <div class="itinerary-day">
+                        <h3>4일차: 돈화 - 통화</h3>
+                        <p>**육정산 정각사** 방문 후 통화로 이동 및 호텔 체크인.</p>
                     </div>
-                    <div class="details-item">
-                        <h3>5일차: 통화-본계-인천</h3>
+                    <div class="itinerary-day">
+                        <h3>5일차: 통화 - 본계 - 인천</h3>
                         <p>**구정철찰산 도교사원** 방문 후 심양공항을 통해 귀국.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="details-section bg-light">
-            <div class="container">
-                <h2>준비 사항</h2>
-                <div class="details-info">
-                    <div class="details-item">
-                        <h3>포함 사항</h3>
+            </section>
+            
+            <section class="inclusions-section">
+                <h2>포함 및 불포함 사항</h2>
+                <div class="inclusions-list">
+                    <div class="inclusion-item">
+                        <h4>포함 사항</h4>
                         <ul>
-                            <li>왕복 항공권, 전 일정 숙박(4성급 이상)</li>
+                            <li>왕복 항공권</li>
+                            <li>전 일정 숙박(4성급 이상)</li>
                             <li>식사, 입장료, 전용 차량 및 가이드</li>
                             <li>KB손해보험 1억 원 여행자 보험</li>
                         </ul>
                     </div>
-                    <div class="details-item">
-                        <h3>불포함 사항</h3>
+                    <div class="inclusion-item">
+                        <h4>불포함 사항</h4>
                         <ul>
                             <li>개인 경비</li>
                             <li>개인 기도 물품 구매 비용</li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
+        </div>
+        
         <div class="details-footer-button">
             <a href="index.html" class="cta-button">메인 페이지로 돌아가기</a>
         </div>
@@ -220,4 +247,3 @@
     </footer>
 </body>
 </html>
-

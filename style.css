@@ -123,19 +123,34 @@ body {
 
 .cta-button {
     display: inline-block;
-    padding: 20px 40px; /* 버튼 사이즈 키우기 */
-    background-color: #A52A2A; /* 붉은색 계열 (갈색 계열로도 해석 가능) */
+    padding: 20px 40px; 
+    background-color: #A52A2A; 
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     border-radius: 50px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    
+    /* 버튼 깜빡임 효과 추가 */
+    animation: blink 2s infinite alternate;
 }
 
 .cta-button:hover {
-    background-color: #8B0000; /* 마우스 오버 시 좀 더 어두운 붉은색 */
+    background-color: #8B0000;
     transform: translateY(-3px);
+}
+
+/* ------------------ */
+/* 새로운 애니메이션 코드 */
+/* ------------------ */
+@keyframes blink {
+    0% {
+        opacity: 1; /* 완전히 보임 */
+    }
+    100% {
+        opacity: 0.7; /* 70% 투명해짐 */
+    }
 }
 
 .bg-light {
@@ -208,6 +223,7 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+
 
 
 
